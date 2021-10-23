@@ -1,53 +1,47 @@
 /* eslint-disable react/no-children-prop */
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { useLoader } from '@react-three/fiber';
 import { MeshWobbleMaterial } from '@react-three/drei';
-// import { TextureLoader } from 'three/src/loaders/TextureLoader';
 
 const ThreeBg = (props: { position: number[] }) => {
-  //   const normalMap = useLoader(TextureLoader, 'NormalMap.png');
   const mesh = useRef<any>();
-  const windowHalfX = window.innerWidth / 2;
-  const windowHalfY = window.innerHeight / 2;
-
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
-  const [positionY, setPositionY] = useState(window.scrollY);
+  const [positionY, setPositionY] = useState(0);
 
-  // Subscribe this component to the render-loop, rotate the mesh every frame
-  useFrame((state, delta) => {
+  useFrame(() => {
     mesh.current.rotation.y = mouseX * 0.001;
     mesh.current.rotation.x += 0.01;
-    mesh.current.position.y = positionY * 0.001;
-    mesh.current.position.z = positionY * -1;
+    mesh.current.position.y = positionY * 0.005;
+    mesh.current.position.z = positionY * -0.01;
   });
 
-  const onDocumentMouseMove = useCallback(
-    (event: MouseEvent) => {
+  useEffect(() => {
+    let windowHalfX = window.innerWidth / 2;
+    let windowHalfY = window.innerHeight / 2;
+
+    const onDocumentMouseMove = (event: MouseEvent) => {
       setMouseX(event.clientX - windowHalfX);
       setMouseY(event.clientY - windowHalfY);
-    },
-    [windowHalfX, windowHalfY],
-  );
+    };
 
-  const onMouseScroll = () => {
-    setPositionY(window.scrollY * 0.002);
-  };
-
-  useEffect(() => {
     window.addEventListener('mousemove', onDocumentMouseMove);
 
     return () => {
       window.removeEventListener('mousemove', onDocumentMouseMove);
     };
-  }, [mouseX, mouseY, onDocumentMouseMove]);
+  }, [mouseX, mouseY]);
 
   useEffect(() => {
+    setPositionY(window.scrollY);
+    const onMouseScroll = () => {
+      setPositionY(window.scrollY * 0.001);
+    };
     window.addEventListener('scroll', onMouseScroll);
     console.log(positionY);
+
     return () => {
-      window.removeEventListener('mousemove', onMouseScroll);
+      window.removeEventListener('scroll', onMouseScroll);
     };
   }, [positionY]);
 
