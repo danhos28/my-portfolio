@@ -16,3 +16,11 @@ body {
 .nav-li {
   @apply cursor-pointer hover:bg-gray-200 p-2 transition-all duration-200 rounded-md;
 }
+
+.btn-inset {
+  transition: ease-out 0.3s;
+}
+.btn-inset:hover {
+  box-shadow: inset 180px 0 0 0 #e3e2ff;
+  color: black;
+}
