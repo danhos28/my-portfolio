@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { MeshWobbleMaterial } from '@react-three/drei';
 
-const ThreeBg = (props: { position: number[] }) => {
+const ThreeBg = (props: { position: number[]; isDark: boolean }) => {
   const mesh = useRef<any>();
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
@@ -12,8 +12,7 @@ const ThreeBg = (props: { position: number[] }) => {
   useFrame(() => {
     mesh.current.rotation.y = mouseX * 0.001;
     mesh.current.rotation.x += 0.01;
-    mesh.current.position.y = positionY * 0.005;
-    mesh.current.position.z = positionY * -0.01;
+    mesh.current.position.z = positionY * -0.003;
   });
 
   useEffect(() => {
@@ -38,7 +37,6 @@ const ThreeBg = (props: { position: number[] }) => {
       setPositionY(window.scrollY * 0.001);
     };
     window.addEventListener('scroll', onMouseScroll);
-    console.log(positionY);
 
     return () => {
       window.removeEventListener('scroll', onMouseScroll);
@@ -49,7 +47,7 @@ const ThreeBg = (props: { position: number[] }) => {
     <mesh {...props} ref={mesh} castShadow>
       <torusKnotGeometry args={[1, 0.3, 160, 16]} />
       <MeshWobbleMaterial
-        color={'#FCFBFF'}
+        color={props.isDark ? '#170055' : '#FCFBFF'}
         attach="material"
         factor={1}
         speed={1}
