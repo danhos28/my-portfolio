@@ -10,7 +10,7 @@ softShadows();
 
 const Intro = ({ isDark }: { isDark: boolean }) => {
   return (
-    <div className="bg-ligth dark:bg-dark dark:text-white w-screen h-screen flex justify-center items-center text-black font-body">
+    <div className="bg-light dark:bg-dark dark:text-white w-screen h-screen flex justify-center items-center text-black font-body">
       <div className="z-10 flex sm:flex-row flex-col-reverse justify-between items-center gap-4 px-4 sm:px-0 w-full max-w-screen-lg sm:w-3/4 md:3/5">
         <div className=" flex flex-col sm:w-[550px]">
           <motion.h1
@@ -105,7 +105,7 @@ const Intro = ({ isDark }: { isDark: boolean }) => {
             transition={{ duration: 1, delay: 1 }}
             src="/images/Daniel.png"
             alt="profile"
-            className=" object-cover object-top rounded-full bg-yellow-200 dark:bg-indigo-900 h-[160px] w-[160px] md:w-[240px]  md:h-[240px]"
+            className=" object-cover object-top rounded-full bg-yellow-200 dark:bg-gray-200 h-[160px] w-[160px] md:w-[240px]  md:h-[240px]"
           />
         </div>
       </div>
@@ -134,7 +134,7 @@ const Intro = ({ isDark }: { isDark: boolean }) => {
               position={[0, -3, 0]}
             >
               <planeBufferGeometry attach="geometry" args={[100, 100]} />
-              <shadowMaterial attach="material" opacity={0.3} />
+              <shadowMaterial attach="material" opacity={isDark ? 0.2 : 0.1} />
             </mesh>
           </group>
           <ThreeBg position={[0, 0, 0]} isDark={isDark} />

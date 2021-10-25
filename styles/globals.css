@@ -14,7 +14,7 @@ body {
 }
 
 .nav-li {
-  @apply cursor-pointer hover:bg-gray-200 p-2 transition-all duration-200 rounded-md;
+  @apply cursor-pointer hover:bg-gray-200 dark:hover:bg-primary p-2 transition-all duration-200 rounded-md;
 }
 
 .btn-inset {
@@ -23,4 +23,9 @@ body {
 .btn-inset:hover {
   box-shadow: inset 180px 0 0 0 #e3e2ff;
   color: black;
+}
+
+.grid-qualification {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
 }

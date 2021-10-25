@@ -11,7 +11,7 @@ module.exports = {
       ternary: '#B5FFD9',
       dark: '#170055',
       white: '#FFFFFF',
-      ligth: '#FCFBFF',
+      light: '#FCFBFF',
       transparent: 'transparent',
       current: 'currentColor',
       black: colors.black,

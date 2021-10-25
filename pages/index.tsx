@@ -15,7 +15,7 @@ const Home: NextPage = () => {
       </Head>
       <Navbar isDark={isDark} setDark={setDark} />
       <Intro isDark={isDark} />
-      <About />,
+      <About isDark={isDark} />
     </div>
   );
 };
