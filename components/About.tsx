@@ -5,18 +5,6 @@ import ThreeBgTwo from './ThreeBgTwo';
 import Button from './Button';
 
 const About = ({ isDark }: { isDark: boolean }) => {
-  const toTheRight = {
-    start: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        duration: 2,
-        bounce: 0.3,
-      },
-    },
-    end: { x: -200, opacity: 0 },
-  };
   const toTheLeft = {
     start: {
       x: 0,
@@ -40,14 +28,24 @@ const About = ({ isDark }: { isDark: boolean }) => {
     },
     end: { opacity: 0 },
   };
+  const fadeInDown = {
+    start: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+    end: { y: -20, opacity: 0 },
+  };
 
   const animationOne = useCustomAnimation(
-    toTheRight.start,
-    toTheRight.end,
+    fadeInDown.start,
+    fadeInDown.end,
     0.3,
   );
-  const animationTwo = useCustomAnimation(toTheLeft.start, toTheLeft.end, 0.2);
-  const animationThree = useCustomAnimation(fadeIn.start, fadeIn.end, 0.2);
+  const animationTwo = useCustomAnimation(toTheLeft.start, toTheLeft.end, 0.4);
+  const animationThree = useCustomAnimation(fadeIn.start, fadeIn.end, 0.4);
 
   return (
     <div className="relative w-screen py-8 text-black dark:text-light font-body">
@@ -62,19 +60,21 @@ const About = ({ isDark }: { isDark: boolean }) => {
           >
             About Me
           </motion.h1>
-          <motion.p
-            animate={animationTwo.animation}
-            ref={animationTwo.ref}
-            className="max-w-screen-md text-justify"
-          >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium
-            debitis placeat at aliquid voluptate, minima nobis nihil pariatur
-            amet! Placeat labore autem obcaecati provident enim saepe, quos odit
-            nostrum porro. Lorem ipsum, dolor sit amet consectetur adipisicing
-            elit. Laudantium debitis placeat at aliquid voluptate, minima nobis
-            nihil pariatur amet! Placeat labore autem obcaecati provident enim
-            saepe, quos odit nostrum porro.
-          </motion.p>
+          <div ref={animationTwo.ref}>
+            <motion.p
+              animate={animationTwo.animation}
+              className="max-w-screen-md text-justify"
+            >
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laudantium debitis placeat at aliquid voluptate, minima nobis
+              nihil pariatur amet! Placeat labore autem obcaecati provident enim
+              saepe, quos odit nostrum porro. Lorem ipsum, dolor sit amet
+              consectetur adipisicing elit. Laudantium debitis placeat at
+              aliquid voluptate, minima nobis nihil pariatur amet! Placeat
+              labore autem obcaecati provident enim saepe, quos odit nostrum
+              porro.
+            </motion.p>
+          </div>
         </div>
         <motion.div animate={animationThree.animation} ref={animationThree.ref}>
           <Button>
