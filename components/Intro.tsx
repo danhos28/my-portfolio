@@ -42,8 +42,9 @@ const Intro = ({ isDark }: { isDark: boolean }) => {
             transition={{ duration: 1, delay: 2 }}
             className="mb-4  "
           >
-            Fresh graduate who are enthusiast about software development and
-            currently seeking for experience.
+            A fresh graduate who is passionate about coding and problem-solving.
+            Always willing to learn new things and can work swiftly and
+            effectively either alone or as part of a team.
           </motion.p>
           <motion.div
             initial={{ scale: 0, x: -100 }}

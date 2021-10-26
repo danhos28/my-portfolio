@@ -28,7 +28,6 @@ const Navbar = ({
     } else {
       document.documentElement.classList.remove('dark');
     }
-    console.log(isDark);
   }, [isDark]);
 
   const handleDark = () => {
