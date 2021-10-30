@@ -29,3 +29,7 @@ body {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
 }
+
+.skill-logo {
+  @apply h-16 w-16 md:h-24 md:w-24 border-2 sm:border-8 border-black shadow-xl dark:border-light bg-light rounded-full px-1 hover:scale-110 transition-all duration-200 ease-in-out object-contain;
+}

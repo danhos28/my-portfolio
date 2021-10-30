@@ -14,7 +14,7 @@ import { useInView } from 'react-intersection-observer';
 
 const useCustomAnimation = (start: object, end: object, threshold = 0.25) => {
   const animation = useAnimation();
-  const { ref, inView } = useInView({ threshold });
+  const { ref, inView } = useInView({ threshold, triggerOnce: true });
 
   useEffect(() => {
     if (inView) animation.start(start);

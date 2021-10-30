@@ -49,7 +49,7 @@ const Navbar = ({
         <li className="nav-li">Home</li>
         <li className="nav-li">About</li>
         <li className="nav-li">Skills</li>
-        <li className="nav-li">Portfolio</li>
+        <li className="nav-li">Projects</li>
         <li className="nav-li">Contact</li>
         <li onClick={handleDark} className="nav-li">
           {isDark ? (

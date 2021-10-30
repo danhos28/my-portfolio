@@ -4,6 +4,8 @@ import { useState } from 'react';
 import About from '../components/About';
 import Intro from '../components/Intro';
 import Navbar from '../components/Navbar';
+import Skills from '../components/Skills';
+import Projects from '../components/Projects';
 
 const Home: NextPage = () => {
   const [isDark, setDark] = useState(false);
@@ -16,6 +18,8 @@ const Home: NextPage = () => {
       <Navbar isDark={isDark} setDark={setDark} />
       <Intro isDark={isDark} />
       <About isDark={isDark} />
+      <Skills />
+      <Projects />
     </div>
   );
 };

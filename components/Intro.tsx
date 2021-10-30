@@ -11,7 +11,7 @@ softShadows();
 const Intro = ({ isDark }: { isDark: boolean }) => {
   return (
     <div className="bg-light dark:bg-dark dark:text-white w-screen h-screen flex justify-center items-center text-black font-body">
-      <div className="z-10 flex sm:flex-row flex-col-reverse justify-between items-center gap-4 px-4 sm:px-0 w-full max-w-screen-lg sm:w-3/4 md:3/5">
+      <div className="z-10 flex sm:flex-row flex-col-reverse justify-between items-center gap-4 px-4 sm:px-0 w-full max-w-screen-xl sm:w-3/4 md:w-3/5">
         <div className=" flex flex-col sm:w-[550px]">
           <motion.h1
             initial={{ opacity: 0, y: -100 }}

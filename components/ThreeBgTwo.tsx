@@ -15,7 +15,7 @@ const ThreeBgTwo = (props: {
   useFrame(() => {
     mesh.current.rotation.y = mouseX * 0.001;
     mesh.current.rotation.x += props.speed;
-    mesh.current.position.z = positionY * -0.003;
+    mesh.current.position.z = positionY * -0.001;
   });
 
   useEffect(() => {
