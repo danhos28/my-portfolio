@@ -8,6 +8,7 @@ const Navbar = ({
   setDark: (dark: boolean) => void;
 }) => {
   const [offsetY, setOffsetY] = useState(0);
+  const [hamburgerClick, setHamburgerClick] = useState<boolean>(false);
 
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
@@ -38,20 +39,22 @@ const Navbar = ({
 
   return (
     <nav
-      className={
-        offsetY
-          ? 'fixed shadow-md bg-light dark:bg-dark dark:text-white transition-all duration-200 w-screen h-[64px] z-50 flex justify-between items-center font-body px-6 sm:px-20 gap-4'
-          : 'fixed w-screen dark:text-white h-[64px] z-50 flex justify-between items-center font-body px-6 sm:px-20 gap-4'
-      }
+      className={`${
+        offsetY ? 'shadow-md transition-all duration-200' : ''
+      } fixed w-screen dark:text-white bg-light dark:bg-dark z-50 flex justify-between items-center font-body px-6 sm:px-20 gap-4 h-[64px]`}
     >
-      <h1 className="text-xl font-black font-sans flex">DH</h1>
-      <ul className="sm:flex gap-6 text-lg list-none hidden">
+      <h1 className="text-xl font-black font-sans lock">DH</h1>
+      <ul
+        className={`${
+          hamburgerClick ? 'top-[64px] opacity-100' : 'top-[-80vh] opacity-0'
+        } flex flex-col items-center gap-6 text-lg transition-all duration-500 ease-in-out sm:opacity-100 sm:transition-none list-none shadow-md sm:shadow-none absolute  left-0 py-4 sm:py-0 w-screen sm:w-auto bg-white sm:bg-light dark:bg-darkTwo sm:dark:bg-dark sm:flex sm:flex-row sm:static`}
+      >
         <li className="nav-li">Home</li>
         <li className="nav-li">About</li>
         <li className="nav-li">Skills</li>
         <li className="nav-li">Projects</li>
         <li className="nav-li">Contact</li>
-        <li onClick={handleDark} className="nav-li">
+        <li onClick={handleDark} className="nav-li hidden sm:block">
           {isDark ? (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -119,21 +122,41 @@ const Navbar = ({
             </svg>
           )}
         </button>
-        <button className="nav-li">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6 text-black dark:text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+        <button
+          className="nav-li"
+          onClick={() => setHamburgerClick(!hamburgerClick)}
+        >
+          {hamburgerClick ? (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          ) : (
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-black dark:text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          )}
         </button>
       </div>
     </nav>

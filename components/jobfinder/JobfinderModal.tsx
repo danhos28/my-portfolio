@@ -47,7 +47,7 @@ const JobfinderModal = ({
     <Backdrop onClick={handleClose} elHeight={elHeight}>
       <motion.div
         onClick={(e) => e.stopPropagation()}
-        className="rounded-md relative flex flex-col justify-center items-center gap-6 text-black dark:text-white lg:flex-row shadow-lg px-6 py-10 md:py-8 sm:p-10 bg-white dark:bg-darkTwo w-[95vw] sm:w-[85vw] max-w-screen-xl font-body"
+        className="rounded-md flex flex-col justify-center items-center gap-6 text-black dark:text-white lg:flex-row shadow-lg px-6 py-10 lg:p-12 md:py-8 sm:p-10 bg-white dark:bg-darkTwo w-[95%] sm:w-[85%] max-w-screen-xl font-body"
         variants={dropIn}
         initial="hidden"
         animate="visible"
@@ -213,10 +213,21 @@ const JobfinderModal = ({
           </div>
 
           <div
-            className="flex rounded-full bg-red-600 absolute top-2 right-2 w-6 h-6 hover:scale-110 cursor-pointer transition-all duration-200 text-white font-sans"
+            className="flex rounded-full bg-white text-red-600 absolute top-2 right-2 w-7 h-7 hover:scale-110 cursor-pointer transition-all duration-200"
             onClick={handleClose}
           >
-            <p className="m-auto font-bold">X</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-full w-full"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                clipRule="evenodd"
+              />
+            </svg>
           </div>
         </div>
       </motion.div>

@@ -23,9 +23,9 @@ const Jobfinder = ({ animationOne, animationTwo }: any) => {
   }, [elHeight]);
 
   return (
-    <div ref={getClientHeight} className="w-full">
+    <div ref={getClientHeight} className="relative w-screen">
       <div
-        className="w-full flex flex-col md:flex-row overflow-hidden relative mb-4"
+        className="max-w-screen-lg w-full sm:w-3/4 mx-auto flex flex-col md:flex-row overflow-hidden mb-4"
         ref={animationOne.ref}
       >
         <div className="w-full md:w-2/3 overflow-hidden" ref={animationTwo.ref}>
@@ -41,7 +41,7 @@ const Jobfinder = ({ animationOne, animationTwo }: any) => {
             animate={animationTwo.animation}
             src="/images/jobfinder-thumb2.png"
             alt="jobfinder"
-            className="w-[100px] md:w-[110px] lg:w-[130px] xl:w-[150px] top-1/4 right-0 md:left-1/2 md:top-1/3 absolute"
+            className="w-[100px] md:w-[110px] lg:w-[130px] xl:w-[150px] top-1/4 right-8 md:left-1/2 md:top-1/3 absolute"
           />
         </div>
         <div className="flex flex-col justify-center gap-2 w-full md:w-1/3 px-4 py-8">

@@ -14,7 +14,7 @@ const Backdrop = ({
 
   return (
     <motion.div
-      className="absolute top-0 left-0 w-full py-16 flex justify-center overflow-hidden z-10"
+      className="absolute top-0 w-screen py-12 flex justify-center overflow-hidden z-10"
       // style={{ height: bdropHeight }}
       onClick={onClick}
       initial={{ opacity: 0 }}

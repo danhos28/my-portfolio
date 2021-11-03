@@ -48,7 +48,7 @@ const Projects = () => {
   };
 
   return (
-    <section className="relative w-screen bg-light dark:bg-dark dark:text-white flex items-center flex-col font-body">
+    <section className=" w-screen bg-light dark:bg-dark dark:text-white flex items-center flex-col font-body">
       <h1 className="text-xl sm:text-3xl font-semibold mt-2">
         Recent projects
       </h1>
@@ -83,16 +83,6 @@ const Projects = () => {
           </div>
         </div>
       </div>
-
-      {/* <AnimatePresence
-        initial={false}
-        exitBeforeEnter
-        onExitComplete={() => null}
-      >
-        {modalOpen && (
-          <JobfinderModal handleClose={close} elHeight={elHeight} />
-        )}
-      </AnimatePresence> */}
     </section>
   );
 };
