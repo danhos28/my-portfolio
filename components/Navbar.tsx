@@ -40,8 +40,10 @@ const Navbar = ({
   return (
     <nav
       className={`${
-        offsetY ? 'shadow-md transition-all duration-200' : ''
-      } fixed w-screen dark:text-white bg-light dark:bg-dark z-50 flex justify-between items-center font-body px-6 sm:px-20 gap-4 h-[64px]`}
+        offsetY
+          ? 'shadow-md transition-all duration-200 bg-light dark:bg-dark'
+          : 'bg-transparent dark:bg-transparent'
+      } fixed w-screen dark:text-white z-50 flex justify-between items-center font-body px-6 sm:px-20 gap-4 h-[64px]`}
     >
       <h1 className="text-xl font-black font-sans lock">DH</h1>
       <ul

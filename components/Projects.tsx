@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import Button from './Button';
 import useCustomAnimation from '../hooks/useCustomAnimation';
 import Jobfinder from './jobfinder/Jobfinder';
@@ -31,8 +31,6 @@ const fadeInUp = {
 
 const Projects = () => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [elHeight, setElHeight] = useState<number | null | undefined>();
-  const getClientHeight = useRef<any>(null);
 
   const animationOne = useCustomAnimation(fadeInDown.start, fadeInDown.end);
   const animationTwo = useCustomAnimation(fadeInUp.start, fadeInUp.end);
@@ -66,7 +64,7 @@ const Projects = () => {
             className="w-[600px]"
           />
 
-          <div className="flex flex-col justify-center gap-2 w-full md:w-1/3 px-4 py-8">
+          <div className="flex flex-col justify-center items-end gap-2 w-full md:w-1/3 px-4 py-8">
             <div className="flex gap-2 items-center">
               <h1 className="text-lg sm:text-2xl font-bold">Cheapero</h1>
               <img
@@ -76,8 +74,10 @@ const Projects = () => {
               />
             </div>
             <p className="font-bold text-dark dark:text-white">Full Stack</p>
-            <p className="mb-4">Cheapero is a fashion ecommerce website. </p>
-            <div className="flex m-auto sm:m-0 w-full">
+            <p className="mb-4 text-right">
+              Cheapero is a fashion ecommerce website.
+            </p>
+            <div className="flex justify-end m-auto sm:m-0 w-full">
               <Button onClick={openModalHandler}>Details</Button>
             </div>
           </div>
