@@ -48,7 +48,7 @@ const About = ({ isDark }: { isDark: boolean }) => {
   const animationThree = useCustomAnimation(fadeIn.start, fadeIn.end, 0.4);
 
   return (
-    <div className="relative w-screen py-8 text-black dark:text-light font-body">
+    <section className="relative w-screen py-8 text-black dark:text-light font-body">
       <div
         ref={animationOne.ref}
         className="flex flex-col text-center jus gap-10 w-full max-w-screen-lg sm:w-3/4 md:3/5 h-full justify-center items-center m-auto p-4"
@@ -77,7 +77,7 @@ const About = ({ isDark }: { isDark: boolean }) => {
           </div>
         </div>
         <motion.div animate={animationThree.animation} ref={animationThree.ref}>
-          <Button>
+          <Button style="w-[180px]">
             Resume
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -106,7 +106,7 @@ const About = ({ isDark }: { isDark: boolean }) => {
           <ThreeBgTwo position={[4, 2, 0]} isDark={isDark} speed={0.03} />
         </Canvas>
       </div>
-    </div>
+    </section>
   );
 };
 

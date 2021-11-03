@@ -2,18 +2,18 @@ import { motion } from 'framer-motion';
 import useCustomAnimation from '../hooks/useCustomAnimation';
 import SkillsParalax from './SkillsParalax';
 
-const Skills = () => {
-  const fadeInDown = {
-    start: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 1,
-      },
+const fadeInDown = {
+  start: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
     },
-    end: { y: -20, opacity: 0 },
-  };
+  },
+  end: { y: -20, opacity: 0 },
+};
 
+const Skills = () => {
   const animationOne = useCustomAnimation(
     fadeInDown.start,
     fadeInDown.end,
@@ -21,7 +21,7 @@ const Skills = () => {
   );
 
   return (
-    <div
+    <section
       className="flex py-10 justify-center bg-waves-one-light bg-cover bg-bottom
      dark:bg-waves-one-dark w-screen dark:text-white font-body"
     >
@@ -43,7 +43,7 @@ const Skills = () => {
         </motion.p>
         <SkillsParalax />
       </div>
-    </div>
+    </section>
   );
 };
 

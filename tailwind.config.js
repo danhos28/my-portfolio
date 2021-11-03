@@ -17,6 +17,7 @@ module.exports = {
         secondary: '#AE00FB',
         ternary: '#B5FFD9',
         dark: '#170055',
+        darkTwo: '#260287',
         white: '#FFFFFF',
         light: '#FCFBFF',
         transparent: 'transparent',
