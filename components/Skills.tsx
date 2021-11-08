@@ -22,6 +22,7 @@ const Skills = () => {
 
   return (
     <section
+      id="skills"
       className="flex py-10 justify-center bg-waves-one-light bg-cover bg-bottom
      dark:bg-waves-one-dark w-screen dark:text-white font-body"
     >

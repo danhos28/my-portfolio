@@ -27,6 +27,8 @@ module.exports = {
       backgroundImage: {
         'waves-one-light': "url('/images/bg-one-light.svg')",
         'waves-one-dark': "url('/images/bg-one-dark.svg')",
+        'waves-two-light': "url('/images/bg-two-light.svg')",
+        'waves-two-dark': "url('/images/bg-two-dark.svg')",
       },
     },
   },

@@ -10,7 +10,10 @@ softShadows();
 
 const Intro = ({ isDark }: { isDark: boolean }) => {
   return (
-    <section className="bg-light dark:bg-dark dark:text-white w-screen h-screen flex justify-center items-center text-black font-body">
+    <section
+      id="intro"
+      className="bg-light dark:bg-dark dark:text-white w-screen h-screen flex justify-center items-center text-black font-body"
+    >
       <div className="z-10 flex sm:flex-row flex-col-reverse justify-between items-center gap-4 px-4 sm:px-0 w-full max-w-screen-xl sm:w-3/4 md:w-3/5">
         <div className=" flex flex-col sm:w-[550px]">
           <motion.h1

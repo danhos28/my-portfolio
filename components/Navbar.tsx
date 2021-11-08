@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link as Scroll } from 'react-scroll';
 
 const Navbar = ({
   isDark,
@@ -48,14 +49,53 @@ const Navbar = ({
       <h1 className="text-xl font-black font-sans lock">DH</h1>
       <ul
         className={`${
-          hamburgerClick ? 'top-[64px] opacity-100' : 'top-[-80vh] opacity-0'
+          hamburgerClick ? 'top-[63px] opacity-100' : 'top-[-80vh] opacity-0'
         } flex flex-col items-center gap-6 text-lg transition-all duration-500 ease-in-out sm:opacity-100 sm:transition-none list-none shadow-md sm:shadow-none absolute  left-0 py-4 sm:py-0 w-screen sm:w-auto bg-white sm:bg-light dark:bg-darkTwo sm:dark:bg-dark sm:flex sm:flex-row sm:static`}
       >
-        <li className="nav-li">Home</li>
-        <li className="nav-li">About</li>
-        <li className="nav-li">Skills</li>
-        <li className="nav-li">Projects</li>
-        <li className="nav-li">Contact</li>
+        <Scroll className="scroll" to="intro" smooth={true} duration={1000}>
+          <li
+            className="nav-li"
+            onClick={() => setHamburgerClick(!hamburgerClick)}
+          >
+            Home
+          </li>
+        </Scroll>
+
+        <Scroll className="scroll" to="about" smooth={true} duration={1000}>
+          <li
+            className="nav-li"
+            onClick={() => setHamburgerClick(!hamburgerClick)}
+          >
+            About
+          </li>
+        </Scroll>
+
+        <Scroll className="scroll" to="skills" smooth={true} duration={1000}>
+          <li
+            className="nav-li"
+            onClick={() => setHamburgerClick(!hamburgerClick)}
+          >
+            Skills
+          </li>
+        </Scroll>
+
+        <Scroll className="scroll" to="projects" smooth={true} duration={1000}>
+          <li
+            className="nav-li"
+            onClick={() => setHamburgerClick(!hamburgerClick)}
+          >
+            Projects
+          </li>
+        </Scroll>
+
+        <Scroll className="scroll" to="contact" smooth={true} duration={1000}>
+          <li
+            className="nav-li"
+            onClick={() => setHamburgerClick(!hamburgerClick)}
+          >
+            Contact
+          </li>
+        </Scroll>
         <li onClick={handleDark} className="nav-li hidden sm:block">
           {isDark ? (
             <svg

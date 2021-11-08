@@ -6,6 +6,7 @@ import Intro from '../components/Intro';
 import Navbar from '../components/Navbar';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
+import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
   const [isDark, setDark] = useState(false);
@@ -20,6 +21,7 @@ const Home: NextPage = () => {
       <About isDark={isDark} />
       <Skills />
       <Projects />
+      <Footer />
     </div>
   );
 };

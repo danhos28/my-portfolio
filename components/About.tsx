@@ -48,7 +48,10 @@ const About = ({ isDark }: { isDark: boolean }) => {
   const animationThree = useCustomAnimation(fadeIn.start, fadeIn.end, 0.4);
 
   return (
-    <section className="relative w-screen py-8 text-black dark:text-light font-body">
+    <section
+      id="about"
+      className="relative w-screen py-8 text-black dark:text-light font-body"
+    >
       <div
         ref={animationOne.ref}
         className="flex flex-col text-center jus gap-10 w-full max-w-screen-lg sm:w-3/4 md:3/5 h-full justify-center items-center m-auto p-4"

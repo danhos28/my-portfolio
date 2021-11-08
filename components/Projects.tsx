@@ -1,9 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
-import { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
-import Button from './Button';
 import useCustomAnimation from '../hooks/useCustomAnimation';
-import Jobfinder from './jobfinder/Jobfinder';
+import Cheapero from './cheapero';
+import DriveSafely from './Drivesafely';
+import Jobfinder from './jobfinder';
+import Xfocus from './xfocus';
 
 const fadeInDown = {
   start: {
@@ -30,58 +29,25 @@ const fadeInUp = {
 };
 
 const Projects = () => {
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
-
   const animationOne = useCustomAnimation(fadeInDown.start, fadeInDown.end);
   const animationTwo = useCustomAnimation(fadeInUp.start, fadeInUp.end);
-  const animationThree = useCustomAnimation(fadeInDown.start, fadeInDown.end);
-
-  const close = () => {
-    setModalOpen(false);
-  };
-  const open = () => setModalOpen(true);
-
-  const openModalHandler = () => {
-    modalOpen ? close() : open();
-  };
+  const animationThree = useCustomAnimation(fadeInUp.start, fadeInUp.end);
+  const animationFour = useCustomAnimation(fadeInUp.start, fadeInUp.end);
+  const animationFive = useCustomAnimation(fadeInDown.start, fadeInDown.end);
 
   return (
-    <section className=" w-screen bg-light dark:bg-dark dark:text-white flex items-center flex-col font-body">
+    <section
+      id="projects"
+      className=" w-screen bg-waves-two-light bg-no-repeat bg-cover dark:bg-waves-two-dark dark:text-white flex items-center flex-col font-body"
+    >
       <h1 className="text-xl sm:text-3xl font-semibold mt-2">
         Recent projects
       </h1>
       <div className="w-full max-w-screen-lg sm:w-3/4 h-full flex flex-col p-4 items-center gap-2">
         <Jobfinder animationOne={animationOne} animationTwo={animationTwo} />
-
-        <div
-          className="w-full flex flex-col md:flex-row-reverse overflow-hidden relative"
-          ref={animationThree.ref}
-        >
-          <motion.img
-            animate={animationThree.animation}
-            src="/images/cheapero-thumb.png"
-            alt="jobfinder"
-            className="w-[600px]"
-          />
-
-          <div className="flex flex-col justify-center items-end gap-2 w-full md:w-1/3 px-4 py-8">
-            <div className="flex gap-2 items-center">
-              <h1 className="text-lg sm:text-2xl font-bold">Cheapero</h1>
-              <img
-                src="/images/cheapero-logo.png"
-                className="h-12 w-12 rounded-full"
-                alt="jobfinder-logo"
-              />
-            </div>
-            <p className="font-bold text-dark dark:text-white">Full Stack</p>
-            <p className="mb-4 text-right">
-              Cheapero is a fashion ecommerce website.
-            </p>
-            <div className="flex justify-end m-auto sm:m-0 w-full">
-              <Button onClick={openModalHandler}>Details</Button>
-            </div>
-          </div>
-        </div>
+        <Cheapero animationOne={animationThree} />
+        <Xfocus animationOne={animationFour} />
+        <DriveSafely animationOne={animationFive} />
       </div>
     </section>
   );

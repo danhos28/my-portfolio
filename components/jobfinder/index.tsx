@@ -1,13 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import JobfinderModal from './JobfinderModal';
 import Button from '../Button';
 
 const Jobfinder = ({ animationOne, animationTwo }: any) => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [elHeight, setElHeight] = useState<number | null | undefined>();
-  const getClientHeight = useRef<any>(null);
 
   const close = () => {
     setModalOpen(false);
@@ -18,12 +16,8 @@ const Jobfinder = ({ animationOne, animationTwo }: any) => {
     modalOpen ? close() : open();
   };
 
-  useEffect((): any => {
-    setElHeight(getClientHeight.current.clientHeight);
-  }, [elHeight]);
-
   return (
-    <div ref={getClientHeight} className="relative w-screen">
+    <div className="relative w-screen">
       <div
         className="max-w-screen-lg w-full sm:w-3/4 mx-auto flex flex-col md:flex-row overflow-hidden mb-4"
         ref={animationOne.ref}
@@ -45,7 +39,7 @@ const Jobfinder = ({ animationOne, animationTwo }: any) => {
           />
         </div>
         <div className="flex flex-col justify-center gap-2 w-full md:w-1/3 px-4 py-8">
-          <div className="flex gap-2 items-center mb-4">
+          <div className="flex gap-2 items-center mb-2">
             <h1 className="text-lg sm:text-2xl font-bold">Jobfinder</h1>
             <img
               src="/images/jobfinder_logo.png"
@@ -67,9 +61,7 @@ const Jobfinder = ({ animationOne, animationTwo }: any) => {
         exitBeforeEnter
         onExitComplete={() => null}
       >
-        {modalOpen && (
-          <JobfinderModal handleClose={close} elHeight={elHeight} />
-        )}
+        {modalOpen && <JobfinderModal handleClose={close} />}
       </AnimatePresence>
     </div>
   );
