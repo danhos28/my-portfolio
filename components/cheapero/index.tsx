@@ -18,15 +18,15 @@ const Cheapero = ({ animationOne }: any) => {
 
   return (
     <div className="relative w-screen" ref={animationOne.ref}>
-      <div className="max-w-screen-lg w-full sm:w-3/4 flex flex-col jusitify-center items-center md:flex-row-reverse mx-auto">
+      <div className="max-w-screen-lg w-full sm:w-3/4 pb-4 flex flex-col jusitify-center items-center md:flex-row-reverse mx-auto">
         <motion.img
           animate={animationOne.animation}
           src="/images/cheapero-thumb.png"
           alt="jobfinder"
-          className="w-[600px]"
+          className="w-full md:w-2/3 max-w-[600px]"
         />
 
-        <div className="flex flex-col justify-center items-end gap-2 w-full md:w-1/3 px-4 py-8">
+        <div className="flex flex-col justify-center items-center md:items-end gap-2 w-full md:w-1/3 px-4 py-8">
           <div className="flex gap-2 items-center mb-4">
             <h1 className="text-lg sm:text-2xl font-bold">Cheapero</h1>
             <img
@@ -36,10 +36,10 @@ const Cheapero = ({ animationOne }: any) => {
             />
           </div>
           <p className="font-bold text-dark dark:text-white">Full Stack</p>
-          <p className="mb-4 text-right">
+          <p className="mb-4 text-center md:text-right">
             Cheapero is a fashion ecommerce website.
           </p>
-          <div className="flex justify-end m-auto sm:m-0 w-full">
+          <div className="flex justify-center md:justify-end m-auto sm:m-0 w-full">
             <Button onClick={openModalHandler}>Details</Button>
           </div>
         </div>

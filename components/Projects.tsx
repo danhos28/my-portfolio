@@ -41,7 +41,7 @@ const Projects = () => {
       className=" w-screen bg-waves-two-light bg-no-repeat bg-cover dark:bg-waves-two-dark dark:text-white flex items-center flex-col font-body"
     >
       <h1 className="text-xl sm:text-3xl font-semibold mt-2">
-        Recent projects
+        Recent Projects
       </h1>
       <div className="w-full max-w-screen-lg sm:w-3/4 h-full flex flex-col p-4 items-center gap-2">
         <Jobfinder animationOne={animationOne} animationTwo={animationTwo} />

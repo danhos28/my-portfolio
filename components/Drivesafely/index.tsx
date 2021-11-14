@@ -17,15 +17,15 @@ const DriveSafely = ({ animationOne }: any) => {
   };
   return (
     <div className="relative w-screen" ref={animationOne.ref}>
-      <div className="max-w-screen-lg w-full sm:w-3/4 flex flex-col jusitify-center items-center md:flex-row-reverse mx-auto">
+      <div className="max-w-screen-lg w-full sm:w-3/4 flex flex-col md:gap-6 justify-center items-center md:flex-row-reverse mx-auto py-12">
         <motion.img
           animate={animationOne.animation}
           src="/images/drivesafely-thumb.png"
           alt="xfocus"
-          className="w-[600px]"
+          className="w-full md:w-2/3 max-w-[200px] object-contain"
         />
 
-        <div className="flex flex-col justify-center items-end gap-2 w-full md:w-1/3 px-4 py-8">
+        <div className="flex flex-col justify-center items-center md:items-end gap-2 w-full md:w-1/3 px-4 py-8">
           <div className="flex gap-2 items-center mb-4">
             <h1 className="text-lg sm:text-2xl font-bold">Drive Safely</h1>
             <img
@@ -35,11 +35,11 @@ const DriveSafely = ({ animationOne }: any) => {
             />
           </div>
           <p className="font-bold text-dark dark:text-white">Front End</p>
-          <p className="mb-4 text-right">
+          <p className="mb-4 text-center md:text-right">
             Drive Safely is an Android App that can detect where the driver is
             sleeping or speeding.
           </p>
-          <div className="flex justify-end m-auto sm:m-0 w-full">
+          <div className="flex justify-center md:justify-end m-auto sm:m-0 w-full">
             <Button onClick={openModalHandler}>Details</Button>
           </div>
         </div>

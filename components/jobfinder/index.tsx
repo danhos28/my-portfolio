@@ -38,8 +38,8 @@ const Jobfinder = ({ animationOne, animationTwo }: any) => {
             className="w-[100px] md:w-[110px] lg:w-[130px] xl:w-[150px] top-1/4 right-8 md:left-1/2 md:top-1/3 absolute"
           />
         </div>
-        <div className="flex flex-col justify-center gap-2 w-full md:w-1/3 px-4 py-8">
-          <div className="flex gap-2 items-center mb-2">
+        <div className="flex flex-col justify-center items-center md:items-start gap-2 w-full md:w-1/3 px-4 py-8">
+          <div className="flex gap-2 items-center mb-2 mt-12">
             <h1 className="text-lg sm:text-2xl font-bold">Jobfinder</h1>
             <img
               src="/images/jobfinder_logo.png"
@@ -48,10 +48,10 @@ const Jobfinder = ({ animationOne, animationTwo }: any) => {
             />
           </div>
           <p className="font-bold text-dark dark:text-white">Full Stack</p>
-          <p className="mb-4">
+          <p className="mb-4 text-center md:text-left">
             Jobfinder is a website to help people find their dream job.{' '}
           </p>
-          <div className="m-auto sm:m-0 flex w-full">
+          <div className="flex justify-center md:justify-start m-auto sm:m-0 w-full">
             <Button onClick={openModalHandler}>Details</Button>
           </div>
         </div>
