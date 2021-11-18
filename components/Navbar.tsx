@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Link as Scroll } from 'react-scroll';
+import { useEffect, useState } from "react";
+import { Link as Scroll } from "react-scroll";
 
 const Navbar = ({
   isDark,
@@ -14,43 +14,43 @@ const Navbar = ({
   const handleScroll = () => setOffsetY(window.pageYOffset);
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    setDark(localStorage.theme === 'dark' ? true : false);
+    window.addEventListener("scroll", handleScroll);
+    setDark(localStorage.theme === "dark" ? true : false);
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
     if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
-      document.documentElement.classList.add('dark');
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark');
+      document.documentElement.classList.remove("dark");
     }
   }, [isDark]);
 
   const handleDark = () => {
     setDark(!isDark);
-    if (isDark) localStorage.theme = 'light';
-    else localStorage.theme = 'dark';
+    if (isDark) localStorage.theme = "light";
+    else localStorage.theme = "dark";
   };
 
   return (
     <nav
       className={`${
         offsetY
-          ? 'shadow-md transition-all duration-200 bg-light dark:bg-dark'
-          : 'bg-transparent dark:bg-transparent'
+          ? "shadow-md transition-all duration-200 bg-light dark:bg-dark"
+          : "bg-transparent dark:bg-transparent"
       } fixed w-screen dark:text-white z-50 flex justify-between items-center font-body px-6 sm:px-20 gap-4 h-[64px]`}
     >
       <h1 className="text-xl font-black font-sans lock">DH</h1>
       <ul
         className={`${
-          hamburgerClick ? 'top-[63px] opacity-100' : 'top-[-80vh] opacity-0'
-        } flex flex-col items-center gap-6 text-lg transition-all duration-500 ease-in-out sm:opacity-100 sm:transition-none list-none shadow-md sm:shadow-none absolute  left-0 py-4 sm:py-0 w-screen sm:w-auto bg-white sm:bg-light dark:bg-darkTwo sm:dark:bg-dark sm:flex sm:flex-row sm:static`}
+          hamburgerClick ? "top-[63px] opacity-100" : "top-[-80vh] opacity-0"
+        } flex flex-col items-center gap-6 text-lg transition-all duration-500 ease-in-out sm:opacity-100 sm:transition-none list-none shadow-md sm:shadow-none absolute  left-0 py-4 sm:py-0 w-screen sm:w-auto sm:flex sm:flex-row sm:static`}
       >
         <Scroll className="scroll" to="intro" smooth={true} duration={1000}>
           <li

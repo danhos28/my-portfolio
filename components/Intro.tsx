@@ -1,10 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
-import ThreeBg from './ThreeBg';
-import Button from './Button';
-import { Canvas } from '@react-three/fiber';
-import { softShadows } from '@react-three/drei';
-import { motion } from 'framer-motion';
+import ThreeBg from "./ThreeBg";
+import Button from "./Button";
+import { Canvas } from "@react-three/fiber";
+import { softShadows } from "@react-three/drei";
+import { motion } from "framer-motion";
 
 softShadows();
 
@@ -115,32 +115,9 @@ const Intro = ({ isDark }: { isDark: boolean }) => {
       </div>
 
       <div className="absolute w-screen h-screen">
-        <Canvas shadows>
-          <directionalLight
-            castShadow
-            position={[0, 10, 0]}
-            intensity={1.5}
-            shadow-mapSize-width={1024}
-            shadow-mapSize-height={1024}
-            shadow-camera-far={50}
-            shadow-camera-left={-10}
-            shadow-camera-right={10}
-            shadow-camera-top={10}
-            shadow-camera-bottom={-10}
-            color={'red'}
-          />
+        <Canvas>
           <ambientLight />
-          <pointLight position={[10, 10, 10]} />
-          <group>
-            <mesh
-              receiveShadow
-              rotation={[-Math.PI / 2, 0, 0]}
-              position={[0, -3, 0]}
-            >
-              <planeBufferGeometry attach="geometry" args={[100, 100]} />
-              <shadowMaterial attach="material" opacity={isDark ? 0.2 : 0.1} />
-            </mesh>
-          </group>
+          <pointLight position={[10, 10, 10]} color="white" />
           <ThreeBg position={[0, 0, 0]} isDark={isDark} />
         </Canvas>
       </div>

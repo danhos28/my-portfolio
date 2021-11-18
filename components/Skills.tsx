@@ -1,6 +1,6 @@
-import { motion } from 'framer-motion';
-import useCustomAnimation from '../hooks/useCustomAnimation';
-import SkillsParalax from './SkillsParalax';
+import { motion } from "framer-motion";
+import useCustomAnimation from "../hooks/useCustomAnimation";
+import SkillsParalax from "./SkillsParalax";
 
 const fadeInDown = {
   start: {
@@ -17,7 +17,7 @@ const Skills = () => {
   const animationOne = useCustomAnimation(
     fadeInDown.start,
     fadeInDown.end,
-    0.3,
+    0.3
   );
 
   return (
@@ -34,7 +34,7 @@ const Skills = () => {
           animate={animationOne.animation}
           className="text-xl sm:text-3xl  font-bold mb-4"
         >
-          Skills
+          My Skillsets
         </motion.h1>
         <motion.p
           animate={animationOne.animation}

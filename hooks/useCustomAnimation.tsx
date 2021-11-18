@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-import { useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useEffect } from "react";
+import { useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 /**
  * This is a custom hook to toggle a Framer Motion animation

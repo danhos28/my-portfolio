@@ -37,6 +37,10 @@ body {
 .skill-logo-detail {
   @apply object-contain h-12 w-12 rounded-full border-2 border-black px-1 bg-white;
 }
+
+.skill-tag {
+  @apply py-1 px-2 bg-gradient-to-r from-[#3E00FF] to-[#7b52f7] hover:scale-105 transition-all duration-200 cursor-default text-white tracking-wide text-xs;
+}
 /* Carousel */
 .dots {
   display: flex;

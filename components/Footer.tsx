@@ -25,7 +25,7 @@ const Footer = () => {
   return (
     <div
       id="contact"
-      className="w-full bg-dark dark:bg-dark py-12 font-body flex flex-col gap-12 items-center px-4"
+      className="w-full bg-waves-footer dark:bg-waves-footer-dark bg-cover bg-center py-12 font-body flex flex-col gap-12 items-center px-4"
     >
       <h1 className="text-2xl sm:text-3xl font-bold text-white">Contact Me</h1>
       <form
@@ -56,7 +56,7 @@ const Footer = () => {
         <input
           type="submit"
           value="SEND"
-          className="h-12 bg-darkTwo dark:bg-primary text-white"
+          className="h-12 bg-primary text-white cursor-pointer hover:bg-[#2e00b6] transition-all duration-200"
         />
       </form>
       <div className="flex mt-6 gap-4 text-white">

@@ -1,8 +1,8 @@
-import { Canvas } from '@react-three/fiber';
-import { motion } from 'framer-motion';
-import useCustomAnimation from '../hooks/useCustomAnimation';
-import ThreeBgTwo from './ThreeBgTwo';
-import Button from './Button';
+import { Canvas } from "@react-three/fiber";
+import { motion } from "framer-motion";
+import useCustomAnimation from "../hooks/useCustomAnimation";
+import ThreeBgTwo from "./ThreeBgTwo";
+import Button from "./Button";
 
 const About = ({ isDark }: { isDark: boolean }) => {
   const toTheLeft = {
@@ -10,7 +10,7 @@ const About = ({ isDark }: { isDark: boolean }) => {
       x: 0,
       opacity: 1,
       transition: {
-        type: 'spring',
+        type: "spring",
         duration: 2,
         bounce: 0.3,
         delay: 0.2,
@@ -42,7 +42,7 @@ const About = ({ isDark }: { isDark: boolean }) => {
   const animationOne = useCustomAnimation(
     fadeInDown.start,
     fadeInDown.end,
-    0.3,
+    0.3
   );
   const animationTwo = useCustomAnimation(toTheLeft.start, toTheLeft.end, 0.4);
   const animationThree = useCustomAnimation(fadeIn.start, fadeIn.end, 0.4);
