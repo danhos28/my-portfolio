@@ -1,8 +1,8 @@
-import useCustomAnimation from '../hooks/useCustomAnimation';
-import Cheapero from './cheapero';
-import DriveSafely from './Drivesafely';
-import Jobfinder from './jobfinder';
-import Xfocus from './xfocus';
+import useCustomAnimation from "../hooks/useCustomAnimation";
+import Cheapero from "./cheapero";
+import DriveSafely from "./Drivesafely";
+import Jobfinder from "./jobfinder";
+import Xfocus from "./xfocus";
 
 const fadeInDown = {
   start: {
@@ -10,7 +10,7 @@ const fadeInDown = {
     opacity: 1,
     transition: {
       duration: 2,
-      type: 'spring',
+      type: "spring",
     },
   },
   end: { y: -200, opacity: 0 },
@@ -21,7 +21,7 @@ const fadeInUp = {
     opacity: 1,
     transition: {
       duration: 2,
-      type: 'spring',
+      type: "spring",
       delay: 0.3,
     },
   },
@@ -43,7 +43,7 @@ const Projects = () => {
       <h1 className="text-xl sm:text-3xl font-semibold mt-2">
         Recent Projects
       </h1>
-      <div className="w-full max-w-screen-lg sm:w-3/4 h-full flex flex-col p-4 items-center gap-2">
+      <div className="w-full max-w-screen-lg sm:w-3/4 h-full flex flex-col p-4 items-center gap-12 pb-16">
         <Jobfinder animationOne={animationOne} animationTwo={animationTwo} />
         <Cheapero animationOne={animationThree} />
         <Xfocus animationOne={animationFour} />

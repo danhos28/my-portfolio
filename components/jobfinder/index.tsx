@@ -19,10 +19,10 @@ const Jobfinder = ({ animationOne, animationTwo }: any) => {
   return (
     <div className="relative w-screen">
       <div
-        className="relative max-w-screen-lg w-full sm:w-3/4 mx-auto flex flex-col md:flex-row items-center overflow-hidden mb-4"
+        className="relative max-w-screen-lg w-full sm:w-3/4 mx-auto flex flex-col md:flex-row items-center shadow-lg md:shadow-none overflow-hidden mb-4"
         ref={animationOne.ref}
       >
-        <div className="w-full md:w-2/3 overflow-hidden bg-jobfinder bg-center bg-cover md:rounded-lg">
+        <div className="w-full md:w-2/3 overflow-hidden bg-jobfinder bg-center bg-cover rounded-t-lg md:rounded-lg">
           <div
             className="relative w-full bg-gradient-to-b from-[#fcfbfdc5] to-[#3a81a1bd]"
             ref={animationTwo.ref}
@@ -58,7 +58,12 @@ const Jobfinder = ({ animationOne, animationTwo }: any) => {
             find the perfect employee for their companies.
           </p>
           <div className="relative flex justify-center md:justify-start items-center gap-2  m-auto sm:m-0 w-full">
-            <Button onClick={openModalHandler}>Details</Button>
+            <Button
+              onClick={openModalHandler}
+              style="w-[120px] flex-grow-0 md:flex-grow-1 lg:w-full"
+            >
+              Details
+            </Button>
 
             <div className="absolute right-0 flex gap-2">
               <a

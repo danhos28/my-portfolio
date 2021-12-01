@@ -45,7 +45,7 @@ const JobfinderModal = ({
     <Backdrop onClick={handleClose}>
       <motion.div
         onClick={(e) => e.stopPropagation()}
-        className="rounded-md mt-[64px] h-[85vh] md:h-auto text-black dark:text-white shadow-lg px-0 py-10 lg:p-12 md:py-8 sm:p-10 bg-white dark:bg-darkTwo w-[95%] sm:w-[85%] max-w-screen-xl font-body"
+        className="rounded-md flex flex-col justify-center items-center gap-6 text-black dark:text-white lg:flex-row shadow-lg px-6 py-10 lg:p-12 md:py-8 sm:p-10 bg-white dark:bg-darkTwo max-h-[85vh] w-[95%] sm:w-[85%] max-w-screen-xl font-body"
         variants={dropIn}
         initial="hidden"
         animate="visible"
